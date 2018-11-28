@@ -20,6 +20,7 @@ function randomNumber(min, max) {
 
 
 function startGame() {
+    currentScore = 0;
     //Javascript example below
    // document.getElementById("current-score").innerHTML = currentScore;
 
