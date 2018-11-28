@@ -20,7 +20,11 @@ function randomNumber(min, max) {
 
 
 function startGame() {
-    currentScore = 0;
+    
+    //currentScore = 0;
+    
+   currentScore = 0;
+
     //Javascript example below
    // document.getElementById("current-score").innerHTML = currentScore;
 
@@ -37,8 +41,6 @@ function startGame() {
     crystalFourValue = randomNumber(1, 12);
     
     //$("crystalOneValue").html(currentScore);
-
-
     console.log("Target Score: " + targetScore);
     console.log("Crystal One: " + crystalOneValue);
     console.log("Crystal Two: " + crystalTwoValue);
