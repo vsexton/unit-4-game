@@ -1,8 +1,11 @@
+$(document).ready(function () {
+
 // VARIABLES
 var targetScore = 0; // Maximum 120, minimum 19
 var currentScore = 0;
 var wins = 0;
 var losses = 0;
+
 
 // Maximum number 12, minimum 1
 var crystalOneValue;
@@ -18,7 +21,7 @@ function randomNumber(min, max) {
 
 function startGame() {
     //Javascript example below
-    //document.getElementById("current-score").innerHTML = currentScore;
+   // document.getElementById("current-score").innerHTML = currentScore;
 
     //JQuery version
     $("#current-score").html(currentScore);
@@ -31,6 +34,9 @@ function startGame() {
     crystalTwoValue = randomNumber(1, 12);
     crystalThreeValue = randomNumber(1, 12);
     crystalFourValue = randomNumber(1, 12);
+    
+    $("crystalOneValue").html(currentScore);
+
 
     console.log("Target Score: " + targetScore);
     console.log("Crystal One: " + crystalOneValue);
@@ -55,43 +61,61 @@ function checkWin() {
     }
 };
 
-
 // CLICK EVENTS
 //click on crystal one
 $("#crystalValue").append(crystalOneValue);
 
-
-$(`#crystalOne-click`).on(`click`, function() {
-    console.log(`You clicked the Diamond!`);
+document.addEventListener('click', function(event) {
+    console.log('click');
 })
-$(`#crystalTwo-click`).on(`click`, function() {
+ $("#crystalOne").click(function(e) {
+  currentScore += crystalOneValue;
+  $("#current-score").html(currentScore);
+  checkWin();
+    console.log(`You clicked the Diamond!`);
+     
+});
+$("#crystalTwo").on("click", function(e) {
+    currentScore += crystalTwoValue;
+  $("#current-score").html(currentScore);
+  checkWin();
     console.log(`You clicked the Ruby!`);
 })
-$(`#crystalThree-click`).on(`click`, function() {
+$("#crystalThree").on(`click`, function(e) {
+    currentScore += crystalThreeValue;
+  $("#current-score").html(currentScore);
+  checkWin();
     console.log(`You clicked the Saphire!`);
 })
-  
-$(`#crystalFour-click`).on(`click`, function() {
+$("#crystalFour").on(`click`, function(e) {
+    currentScore += crystalFourValue;
+  $("#current-score").html(currentScore);
+  checkWin();
     console.log(`You clicked the Emerald!`);
 })
-  
-
-
+ 
+ //$("#crystalOneValue").html(currentScore);
 // current score and add crystalOneValue to it
 
-if (currentScore > targetScore) {
-    alert("Bummer! You lost");
-    losses++;
-    $("#losses").html(losses);
-    startGame();
-} 
-else if (currentScore === targetScore) {
-    alert("Good job!  You matched the number");
-    wins++;
-    $("#wins").html(wins);
-    startGame();
-}
+//if (currentScore > targetScore) {
+    //alert("Bummer! You lost");
+    //losses++;
+    //$("#losses").html(losses);
+  //  startGame();
+//} 
+//else if (currentScore === targetScore) {
+    //alert("Good job!  You matched the number");
+    //wins++;
+    //$("#wins").html(wins);
+  //  startGame();
+//}
 
 // update HTML of current score
+//var crystalValue = ($(this).attr("data-crystalvalue"));
+  // crystalValue = parseInt(crystalValue);
+    
+  //  currentScore += crystalValue;
 
 // checkWin();
+
+});
