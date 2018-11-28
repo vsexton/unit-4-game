@@ -35,7 +35,7 @@ function startGame() {
     crystalThreeValue = randomNumber(1, 12);
     crystalFourValue = randomNumber(1, 12);
     
-    $("crystalOneValue").html(currentScore);
+    //$("crystalOneValue").html(currentScore);
 
 
     console.log("Target Score: " + targetScore);
